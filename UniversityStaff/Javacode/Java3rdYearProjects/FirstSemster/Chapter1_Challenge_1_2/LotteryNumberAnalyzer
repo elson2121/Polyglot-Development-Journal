@@ -1,0 +1,43 @@
+```java
+public class LotteryNumberAnalyzer {
+    public static void main(String[] args) {
+        // Initialize winning numbers
+        String[] winningNumbers = {"12-34-56-78-90", "33-44-11-66-22", "01-02-03-04-05"};
+        
+        double maxAverage = -1;
+        String maxAverageNumber = "";
+        
+        // Analyze each ticket
+        for (String number : winningNumbers) {
+            // Remove dashes
+            String cleanNumber = number.replace("-", "");
+            
+            // Convert to integer array
+            int[] digits = new int[cleanNumber.length()];
+            for (int i = 0; i < cleanNumber.length(); i++) {
+                digits[i] = Character.getNumericValue(cleanNumber.charAt(i));
+            }
+            
+            // Calculate sum and average
+            int sum = 0;
+            for (int digit : digits) {
+                sum += digit;
+            }
+            double average = (double) sum / digits.length;
+            
+            // Update max average
+            if (average > maxAverage) {
+                maxAverage = average;
+                maxAverageNumber = number;
+            }
+            
+            // Print analysis
+            System.out.println("Analyzing: " + number);
+            System.out.println("Digit Sum: " + sum + ", Digit Average: " + average);
+        }
+        
+        // Print highest average
+        System.out.println("The winning number with the highest average is: " + maxAverageNumber + " with an average of " + maxAverage);
+    }
+}
+```
