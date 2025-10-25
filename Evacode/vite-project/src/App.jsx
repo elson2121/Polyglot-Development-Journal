@@ -7,7 +7,7 @@ function App() {
  
   return (
     <>
-    <Geeting name="abebe" />
+    <Geeting   />
     <GreetingClass name="kebede" age={30} />
     </>
   )
