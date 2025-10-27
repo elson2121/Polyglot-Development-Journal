@@ -7,6 +7,10 @@ function App() {
  
   return (
     <>
+    {userData?.map((item,i) => { 
+      const {name,rol} = item
+      return <GreetingClass key={i} name={name} rol={rol} />
+    })}
     <Geeting   />
     <GreetingClass name="kebede" age={30} />
     </>

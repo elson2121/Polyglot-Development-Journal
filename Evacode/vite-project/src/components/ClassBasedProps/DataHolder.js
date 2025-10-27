@@ -6,7 +6,13 @@ const users = [
   { id: 2, name: 'Bob', role: 'Designer' },
   { id: 3, name: 'Charlie', role: 'Project Manager' },
   { id: 4, name: 'Diana', role: 'QA Engineer' },
-  { id: 4, name: 'Diana', role: 'QA Engineer' }
+  { id: 4, name: 'Diana', role: 'QA Engineer' },
+   { id: 2, name: 'Bob', role: 'Designer' },
+  { id: 3, name: 'Charlie', role: 'Project Manager' },
+  { id: 4, name: 'Diana', role: 'QA Engineer' },
+  { id: 4, name: 'Diana', role: 'QA Engineer' },
+   { id: 2, name: 'Bob', role: 'Designer' }
+ 
 ];
 
  
