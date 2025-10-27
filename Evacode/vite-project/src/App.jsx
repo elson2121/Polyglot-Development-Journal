@@ -2,17 +2,15 @@
 import './App.css'
 import GreetingClass from './components/ClassBasedProps/GreetingClass'
 import Geeting from './components/FuncGetting/Geeting'
-
+import DataHolder from './data/DataHolder'
 function App() {
  
   return (
     <>
-    {userData?.map((item,i) => { 
+    {DataHolder?.map((item,i) => { 
       const {name,rol} = item
       return <GreetingClass key={i} name={name} rol={rol} />
     })}
-    <Geeting   />
-    <GreetingClass name="kebede" age={30} />
     </>
   )
 }
