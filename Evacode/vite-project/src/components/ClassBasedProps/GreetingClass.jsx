@@ -6,7 +6,7 @@ export default class GreetingClass extends Component {
     const { name,rol,age} = this.props;
     return (
       <>
-       <h1>hello  {name} and the age {age}  the role of the man you are seeing over see here is the naem and fhe way hwe do h {rol}</h1> 
+       <h1>hello  {name} and the age {age}  the jop is  {rol}</h1> 
       </>
     )
   }
