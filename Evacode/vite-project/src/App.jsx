@@ -8,8 +8,8 @@ function App() {
   return (
     <>
     {DataHolder?.map((item,i) => { 
-      const {name,rol,age} = item
-      return <GreetingClass key={i} name={name} rol={rol} />
+      const {name,role,age} = item
+      return <GreetingClass key={i} name={name} role={role} age={age}/>
     })}
     </>
   )

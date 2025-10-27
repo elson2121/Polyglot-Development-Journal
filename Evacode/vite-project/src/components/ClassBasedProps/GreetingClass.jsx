@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 export default class GreetingClass extends Component {
 
   render() { 
-    const { name,rol,age} = this.props;
+    const { name,role,age} = this.props;
     return (
       <>
-       <h1>hello  {name} and the age {age}  the jop is  {rol}</h1> 
+       <h1>hello  {name} and the age {age}  the jop is  {role}</h1> 
       </>
     )
   }
