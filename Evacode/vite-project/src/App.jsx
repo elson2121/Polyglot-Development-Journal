@@ -9,7 +9,7 @@ function App() {
     <>
     {DataHolder?.map((item,i) => { 
       const {name,role,age} = item
-      return <GreetingClass key={i} name={name} role={role} age={age}/>
+      return <GreetingClass key={i} name={name} rol={role} age={age}/>
     })}
     </>
   )
