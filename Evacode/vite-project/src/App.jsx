@@ -3,6 +3,7 @@ import './App.css'
 import GreetingClass from './components/ClassBasedProps/GreetingClass'
 import Geeting from './components/FuncGetting/Geeting'
 import DataHolder from './components/ClassBasedProps/DataHolder'
+import Stata from './components/StateComp/Stata'
 function App() {
  
   return (
@@ -11,6 +12,7 @@ function App() {
       const {name,role,age} = item
       return <GreetingClass key={i} name={name} rol={role} age={age}/>
     })}
+    <Stata/>
     </>
   )
 }
