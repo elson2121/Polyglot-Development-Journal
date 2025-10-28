@@ -4,7 +4,14 @@ function State() {
     const[state,setState]=React.useState(0);
     const [count,setCount]=React.useState(0);
     const setCounttoten=()=>{
-setState(prevState=> prevState+1);}
+setState(prevState=> prevState+1);
+setCount(prevState=>prevState-1)
+};
+const setCounttoten=()=>{
+setState(prevState=> prevState+1);
+setCount(prevState=>prevState-1)
+}
+
   return (
 <> 
     <div>
@@ -13,13 +20,17 @@ setState(prevState=> prevState+1);}
        <div> 
 <p> current count value </p>
   <span>{state}</span>
+    <span>{count}</span>
        </div>
      
        <button
 
         onClick={setCounttoten}>Set Count to 10 {state}
        </button>
-    
+     <button
+
+        onClick={setCounttoten}>Set Count to 10 {count}
+       </button>
  </> )
 }
 
