@@ -2,6 +2,7 @@ import React from 'react'
 
 function State() {
     const[state,setState]=React.useState(0);
+    const [count,setCount]=React.useState(0);
     const setCounttoten=()=>{
 setState(prevState=> prevState+1);}
   return (
