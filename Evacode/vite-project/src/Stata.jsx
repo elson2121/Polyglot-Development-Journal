@@ -3,16 +3,22 @@ import React from 'react'
 function State() {
     const[state,setState]=React.useState(0);
     const setCounttoten=()=>{
-setState(10); };
+setState(prevState=> prevState+1);
   return (
+    
     <div>
-       <p className="text-lg text-gray-700">Current Count Value (from useState):</p> 
+       <h1 className="text-lg text-gray-700">Simple click counte</h1> 
+       </div>
+       <div> 
+<p> current count value </p>
+
+       </div>
        <span>{state}</span>
        <button
 
-        onClick={setCounttoten}>Set Count to 10
+        onClick={setCounttoten}>Set Count to 10 {state}
        </button>
-    </div>
+    
   )
 }
 

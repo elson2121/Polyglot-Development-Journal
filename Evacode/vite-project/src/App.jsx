@@ -3,7 +3,7 @@ import './App.css'
 import GreetingClass from './components/ClassBasedProps/GreetingClass'
 import Geeting from './components/FuncGetting/Geeting'
 import DataHolder from './components/ClassBasedProps/DataHolder'
-import Stata from './components/StateComp/Stata'
+import Stata from './Stata'
 function App() {
  
   return (
