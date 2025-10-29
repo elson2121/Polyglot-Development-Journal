@@ -24,6 +24,11 @@ function State() {
                 <p>Current Count Value:</p> 
                 <span>{count}</span>
             </div>
+             <div>
+                {/* Displaying the current state */}
+                <p>Current Count Value:for day 2</p> 
+                <span>{add}</span>
+            </div>
             
             {/* 3. Attach the increment function to the button */}
             <button
