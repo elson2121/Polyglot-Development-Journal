@@ -31,7 +31,7 @@ function State() {
             </div>
              <div>
                 {/* Displaying the current state */}
-                <p>Current Count Value:for day 222</p> 
+                <p>Current Count Value:for day 2</p> 
                 <span>{add}</span>
             </div>
               <button
