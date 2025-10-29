@@ -10,6 +10,11 @@ function State() {
         setCount(prevCount => prevCount + 1); 
         setAdd(prevAdd => prevAdd + 1);
     };
+      const incrementCountt = () => {
+
+       
+        setAdd(prevAdd => prevAdd + 1);
+    };
      const decrementCount = () => {
      
         setCount(prevCount => prevCount > 0 ? prevCount - 1 : 0); 
@@ -29,6 +34,12 @@ function State() {
                 <p>Current Count Value:for day 2</p> 
                 <span>{add}</span>
             </div>
+              <button
+                onClick={incrementCountt}
+            >
+                Click this for the day 2
+            </button>
+            
             
             {/* 3. Attach the increment function to the button */}
             <button
