@@ -51,7 +51,7 @@ function State() {
             <button
                 onClick={decrementCount}
             >
-                Click to Decrease 
+                Click to Decrease count
             </button>
             {/* Optional: A button to reset the count */}
             <button
