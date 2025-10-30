@@ -37,7 +37,7 @@ function State() {
               <button
                 onClick={incrementCountt}
             >
-                Click this for the day 2
+                Click this
             </button>
             
             
