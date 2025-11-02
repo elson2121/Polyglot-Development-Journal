@@ -5,7 +5,7 @@ export default class Filezila extends Component {
     return (
       <div>
        <h1>the file to  add some things for props </h1>
-       if ()
+    
       </div>
     )
   }
