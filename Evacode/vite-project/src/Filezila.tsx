@@ -5,7 +5,7 @@ export default class Filezila extends Component {
     return (
       <div>
 <h1>hello the update </h1>
-<p>the file  </p>
+<p>the  </p>
     
       </div>
     )
