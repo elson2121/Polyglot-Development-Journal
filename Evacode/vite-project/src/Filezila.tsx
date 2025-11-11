@@ -7,7 +7,7 @@ export default class Filezila extends Component {
 <h1>hello  wokld  </h1>
 <h6>hello   we will hve the examp today  </h6>
 <h2>the  new topic ofr the new  </h2>
-<h1>the file there in the system to update </h1>
+<h1>the file there in the system  </h1>
 <p>the  </p>
     
       </div>
