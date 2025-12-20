@@ -1,25 +1,36 @@
-import javax.swing.*; // Importing UI components
+import javax.swing.*;
+import java.awt.*; // You MUST import this for Colors and Fonts
 
 public class LoginPage {
-    // This is the "constructor" - it runs when you call 'new LoginPage()'
     public LoginPage() {
-        JFrame frame = new JFrame("Login Page");
-        frame.setSize(300, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null); // Manual positioning
+        JFrame frame = new JFrame("Login");
+        frame.setSize(400, 500);
+        frame.setLayout(null);
 
-        JLabel label = new JLabel("Username:");
-        label.setBounds(20, 20, 80, 25);
-        frame.add(label);
+        // CSS: .background { background-color: #f0f0f0; }
+        frame.getContentPane().setBackground(new Color(240, 240, 240));
 
-        JTextField userText = new JTextField();
-        userText.setBounds(100, 20, 160, 25);
-        frame.add(userText);
+        // Create a Label
+        JLabel title = new JLabel("Login Here");
+        title.setBounds(100, 30, 200, 40);
 
-        JButton loginButton = new JButton("Login");
-        loginButton.setBounds(100, 80, 80, 25);
-        frame.add(loginButton);
+        // CSS: .title { font-size: 24px; font-weight: bold; color: #333; }
+        title.setFont(new Font("Arial", Font.BOLD, 24));
+        title.setForeground(new Color(51, 51, 51));
+        frame.add(title);
 
-        frame.setVisible(true); // This makes the window pop up
+        // Create a Styled Button
+        JButton loginBtn = new JButton("Submit");
+        loginBtn.setBounds(100, 150, 150, 40);
+
+        // CSS: .button { background-color: blue; color: white; border-radius: 5px; }
+        loginBtn.setBackground(new Color(0, 102, 204));
+        loginBtn.setForeground(Color.WHITE);
+        loginBtn.setFocusable(false); // Removes the ugly dotted line around text
+        loginBtn.setBorder(BorderFactory.createEmptyBorder()); // CSS: border: none;
+
+        frame.add(loginBtn);
+        frame.setVisible(true);
+
     }
 }
