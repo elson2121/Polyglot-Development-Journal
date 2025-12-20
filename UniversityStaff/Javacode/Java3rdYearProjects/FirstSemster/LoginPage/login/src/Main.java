@@ -1,11 +1,14 @@
+import ui.LoginPage;
+import java.util.ArrayList;
+
 public class Main {
+    // This acts like a global "Database" in memory
+    public static ArrayList<String> userList = new ArrayList<>();
+
     public static void main(String[] args) {
-        // This is how you "call" your pages
-        // For now, let's just open the Login Page
+        // Pre-fill with one user
+        userList.add("John Doe");
+
         new LoginPage();
-
-
-        // If you wanted to open Register instead, you'd type:
-        // new RegisterPage();
     }
 }
