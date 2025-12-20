@@ -4,6 +4,7 @@ public class Main {
         // For now, let's just open the Login Page
         new LoginPage();
 
+
         // If you wanted to open Register instead, you'd type:
         // new RegisterPage();
     }
