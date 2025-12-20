@@ -1,36 +1,57 @@
 import javax.swing.*;
-import java.awt.*; // You MUST import this for Colors and Fonts
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LoginPage {
     public LoginPage() {
-        JFrame frame = new JFrame("Login");
+        JFrame frame = new JFrame("Login Page");
         frame.setSize(400, 500);
         frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // CSS: .background { background-color: #f0f0f0; }
-        frame.getContentPane().setBackground(new Color(240, 240, 240));
+        // 1. Username Field
+        JLabel userLabel = new JLabel("Username:");
+        userLabel.setBounds(50, 100, 100, 30);
+        frame.add(userLabel);
 
-        // Create a Label
-        JLabel title = new JLabel("Login Here");
-        title.setBounds(100, 30, 200, 40);
+        JTextField userField = new JTextField();
+        userField.setBounds(150, 100, 150, 30);
+        frame.add(userField);
 
-        // CSS: .title { font-size: 24px; font-weight: bold; color: #333; }
-        title.setFont(new Font("Arial", Font.BOLD, 24));
-        title.setForeground(new Color(51, 51, 51));
-        frame.add(title);
+        // 2. Password Field (shows dots instead of letters)
+        JLabel passLabel = new JLabel("Password:");
+        passLabel.setBounds(50, 150, 100, 30);
+        frame.add(passLabel);
 
-        // Create a Styled Button
-        JButton loginBtn = new JButton("Submit");
-        loginBtn.setBounds(100, 150, 150, 40);
+        JPasswordField passField = new JPasswordField();
+        passField.setBounds(150, 150, 150, 30);
+        frame.add(passField);
 
-        // CSS: .button { background-color: blue; color: white; border-radius: 5px; }
+        // 3. Login Button
+        JButton loginBtn = new JButton("Login");
+        loginBtn.setBounds(150, 220, 100, 40);
         loginBtn.setBackground(new Color(0, 102, 204));
         loginBtn.setForeground(Color.WHITE);
-        loginBtn.setFocusable(false); // Removes the ugly dotted line around text
-        loginBtn.setBorder(BorderFactory.createEmptyBorder()); // CSS: border: none;
-
         frame.add(loginBtn);
-        frame.setVisible(true);
 
+        // 4. "Go to Register" Button (The Navigation)
+        JButton goToRegister = new JButton("Don't have an account? Register");
+        goToRegister.setBounds(50, 300, 300, 30);
+        goToRegister.setBorderPainted(false);
+        goToRegister.setContentAreaFilled(false);
+        goToRegister.setForeground(Color.BLUE); // Make it look like a link
+        frame.add(goToRegister);
+
+        // THE LOGIC: What happens when you click "Register"
+        goToRegister.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();      // 1. Close the Login window
+                new RegisterPage();   // 2. Open the RegisterPage
+            }
+        });
+
+        frame.setVisible(true);
     }
 }
