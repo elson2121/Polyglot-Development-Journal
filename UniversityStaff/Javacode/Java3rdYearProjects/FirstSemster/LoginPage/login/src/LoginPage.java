@@ -1,57 +1,95 @@
+package ui;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginPage {
-    public LoginPage() {
-        JFrame frame = new JFrame("Login Page");
-        frame.setSize(400, 500);
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // We define the frame at the class level so the logic can "see" it to close it
+    private JFrame frame;
 
-        // 1. Username Field
+    public LoginPage() {
+        // 1. Create the Window (The Container)
+        frame = new JFrame("Login - Notification System");
+        frame.setSize(400, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null); // Absolute positioning (Like 'position: absolute')
+        frame.getContentPane().setBackground(new Color(245, 245, 245));
+
+        // 2. Title Label
+        JLabel title = new JLabel("Login", SwingConstants.CENTER);
+        title.setBounds(100, 30, 200, 40);
+        title.setFont(new Font("Arial", Font.BOLD, 28));
+        title.setForeground(new Color(44, 62, 80));
+        frame.add(title);
+
+        // 3. Username Input
         JLabel userLabel = new JLabel("Username:");
         userLabel.setBounds(50, 100, 100, 30);
         frame.add(userLabel);
 
         JTextField userField = new JTextField();
-        userField.setBounds(150, 100, 150, 30);
+        userField.setBounds(50, 130, 280, 35);
+        userField.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
         frame.add(userField);
 
-        // 2. Password Field (shows dots instead of letters)
+        // 4. Password Input
         JLabel passLabel = new JLabel("Password:");
-        passLabel.setBounds(50, 150, 100, 30);
+        passLabel.setBounds(50, 180, 100, 30);
         frame.add(passLabel);
 
         JPasswordField passField = new JPasswordField();
-        passField.setBounds(150, 150, 150, 30);
+        passField.setBounds(50, 210, 280, 35);
+        passField.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
         frame.add(passField);
 
-        // 3. Login Button
+        // 5. Login Button (The Logic Trigger)
         JButton loginBtn = new JButton("Login");
-        loginBtn.setBounds(150, 220, 100, 40);
-        loginBtn.setBackground(new Color(0, 102, 204));
+        loginBtn.setBounds(50, 280, 280, 45);
+        loginBtn.setBackground(new Color(52, 152, 219)); // Blue color
         loginBtn.setForeground(Color.WHITE);
+        loginBtn.setFont(new Font("Arial", Font.BOLD, 16));
+        loginBtn.setFocusable(false);
         frame.add(loginBtn);
 
-        // 4. "Go to Register" Button (The Navigation)
-        JButton goToRegister = new JButton("Don't have an account? Register");
-        goToRegister.setBounds(50, 300, 300, 30);
-        goToRegister.setBorderPainted(false);
-        goToRegister.setContentAreaFilled(false);
-        goToRegister.setForeground(Color.BLUE); // Make it look like a link
-        frame.add(goToRegister);
+        // 6. Register Redirect Button
+        JButton registerBtn = new JButton("Don't have an account? Register");
+        registerBtn.setBounds(50, 340, 280, 30);
+        registerBtn.setForeground(Color.GRAY);
+        registerBtn.setBorderPainted(false);
+        registerBtn.setContentAreaFilled(false);
+        frame.add(registerBtn);
 
-        // THE LOGIC: What happens when you click "Register"
-        goToRegister.addActionListener(new ActionListener() {
+        // --- THE LOGIC PART ---
+
+        loginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();      // 1. Close the Login window
-                new RegisterPage();   // 2. Open the RegisterPage
+                String typedUser = userField.getText();
+                String typedPass = new String(passField.getPassword());
+
+                // Check for Admin Credentials
+                if (typedUser.equals("admin") && typedPass.equals("ela12")) {
+                    JOptionPane.showMessageDialog(frame, "Admin Login Success!");
+                    frame.dispose(); // Close login window
+                    new Dashboard(true); // Open dashboard as Admin
+                }
+                // Check if the user exists in our list (from Main)
+                else {
+                    // This is a simple fallback for now
+                    JOptionPane.showMessageDialog(frame, "Invalid Credentials", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
+        registerBtn.addActionListener(e -> {
+            frame.dispose();
+            new RegisterPage(); // Moves to RegisterPage component
+        });
+
+        // Make it visible at the end
+        frame.setLocationRelativeTo(null); // Center the window on screen
         frame.setVisible(true);
     }
 }
