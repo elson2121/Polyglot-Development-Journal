@@ -1,0 +1,36 @@
+/* background color for eco */
+.bg-green {
+    -fx-background-color: #f1f8e9;
+}
+
+.name-style {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 24px;
+    -fx-text-fill: #2e7d32;
+}
+
+.temp-big {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.leaf {
+    -fx-fill: #66bb6a;
+}
+
+.tip-area {
+    -fx-background-color: #c8e6c9;
+    -fx-padding: 5;
+    -fx-background-radius: 5;
+}
+
+.days-border {
+    -fx-border-color: #a5d6a7;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 10;
+}
+
+.button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+}
